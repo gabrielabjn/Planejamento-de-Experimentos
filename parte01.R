@@ -27,7 +27,7 @@ for (i in seq_along(t_i)) e[i,]<-e[i,]-t_i[i]
 shapiro.test(e)  
 lillie.test(e)
 hist(e,freq=FALSE)  
-plot(as.vector(dados),e,xlab='valores ajustados',ylab='residuos')
+plot(as.vector(dados),as.vector(e),xlab='valores ajustados',ylab='residuos')
 
 qqnorm(e)  
 qqline(e)
