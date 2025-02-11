@@ -124,3 +124,14 @@ SQBlocos_1<-sum((T_B_1^2)/r_B)-C
 SQR_1<-SQT_1-SQBlocos_1
 
 SQTrat_aj<-SQR_1-SQR
+
+
+
+# CALCULO DAS DIFERENCAS ENTRE PARES (TUKEY) -----------------------------------
+
+apply(dados,1,mean)
+medias<-apply(dados,1,mean)
+combinacoes <- combn(medias, 2)
+diferencas <- combinacoes[1,] - combinacoes[2,]
+resultado <- data.frame(Num1 = combinacoes[1, ], Num2 = combinacoes[2, ], Diferenca = diferencas)
+
